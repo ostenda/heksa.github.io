@@ -3,28 +3,25 @@ import Image from 'next/image'
 export default function Header() {
 
     return (
-    <div
-        className={
-            "container mx-auto flex items-center border-b-2 px-6 py-2 h-24"
-        }
-       >
-
-        <h1 className ="font=bold flex-grow">
-        <img 
-            class='h-20 object-contain' 
-            src='./img/logo.jpg' 
-            alt='KS HEKSA'
-             />
-        </h1>
-       <div className="grow">
-            <div className='flex item-center justity-center gap-2 md:gap-8'>
-                <a href="#">STRONA GŁÓWNA</a>
-                <a href="#">AKTUALNOŚCI</a>
-                <a href="#">KLUB</a>
-                <a href="#">KONTAKT</a>
-            </div>
-        </div>
+        <header class="bg-white bg-opacity-95 shadow-md">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+    
+    <div class="flex items-center">
+      <img class="h-16 object-contain" src="./img/logo.jpg" alt="KS HEKSA" />
     </div>
+
+   
+    <nav>
+      <ul class="flex space-x-6 text-gray-700 text-lg font-medium">
+        <li><a href="#about" class="hover:text-blue-600">Klub</a></li>
+        <li><a href="#programs" class="hover:text-blue-600">Program</a></li>
+        <li><a href="#schedule" class="hover:text-blue-600">Plan</a></li>
+        <li><a href="#news" class="hover:text-blue-600">Aktualnosci</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
     )
 };
 

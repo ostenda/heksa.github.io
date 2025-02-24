@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Header from '@/components/header'
+import Hero from '@/components/hero'
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
       <Header/>
       
        <div>
-        
+        <Hero/>
       </div> 
     </div>
   )
