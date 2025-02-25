@@ -31,7 +31,7 @@ export default function Hero() {
     {/* Right Image */}
     <div class="lg:w-1/2 mt-10 lg:mt-0">
       <img
-        src="img0.png"
+        src="./img/image1.jpg"
         alt="Table Tennis Club"
         class="w-full max-w-lg mx-auto rounded-lg shadow-lg object-cover"
       />
