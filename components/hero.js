@@ -1,29 +1,28 @@
 export default function Hero() {
     return(
-        <section class="bg-gradient-to-r from-blue-100 to-white py-16">
+        <section class="bg-gradient-to-r from-gray-100 to-white py-16">
   <div class="container mx-auto flex flex-col lg:flex-row items-center px-6">
     {/* Left Text Content */}
 
     <div class="lg:w-1/2 text-center lg:text-left">
       <h1 class="text-5xl font-bold text-gray-900">
-        Welcome to HEXA Table Tennis Club
+        Witaj w Klubie Tenisa Stolowego HEKSA
       </h1>
       <p class="text-xl text-gray-600 mt-4">
-        Join our community of passionate players and discover the exciting
-        world of table tennis.
+           Dołącz do naszej społeczności graczy i odkryj ekscytujący świat tenisa stołowego
       </p>
       <div class="mt-6 flex justify-center lg:justify-start space-x-4">
         <a
           href="#join"
-          class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition"
+          class="bg-orange-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-orange-700 transition"
         >
-          Join Now
+          Dolacz teraz
         </a>
         <a
           href="#schedule"
-          class="border border-blue-600 text-blue-600 px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-600 hover:text-white transition"
+          class="border border-orange-600 text-orange-600 px-6 py-3 rounded-full text-lg font-medium hover:bg-orange-600 hover:text-white transition"
         >
-          View Schedule
+          Plan Zajec
         </a>
       </div>
     </div>

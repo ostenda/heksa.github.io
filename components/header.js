@@ -13,11 +13,11 @@ export default function Header() {
    
     <nav>
       <ul class="flex space-x-6 text-gray-700 text-lg font-medium">
-        <li><a href="#about" class="hover:text-blue-600">Klub</a></li>
-        <li><a href="#programs" class="hover:text-blue-600">Program</a></li>
-        <li><a href="#schedule" class="hover:text-blue-600">Plan</a></li>
-        <li><a href="#news" class="hover:text-blue-600">Aktualnosci</a></li>
-        <li><a href="#contact" class="hover:text-blue-600">Kontakt</a></li>
+        <li><a href="#about" class="hover:text-orange-600">Klub</a></li>
+        <li><a href="#programs" class="hover:text-orange-600">Program</a></li>
+        <li><a href="#schedule" class="hover:text-orange-600">Plan</a></li>
+        <li><a href="#news" class="hover:text-orange-600">Aktualnosci</a></li>
+        <li><a href="#contact" class="hover:text-orange-600">Kontakt</a></li>
       </ul>
     </nav>
   </div>
