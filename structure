@@ -1,0 +1,57 @@
+📦 your-project
+┣ 📂 .next/                # Next.js build files (auto-generated)
+┣ 📂 app/                  # Next.js App Router (optional if using /pages)
+┃ ┣ 📜 layout.js           # Root layout component
+┃ ┗ 📜 page.js             # Default landing page
+┣ 📂 components/           # Reusable UI components
+┃ ┣ 📜 AboutUs.js
+┃ ┣ 📜 ContactForm.js
+┃ ┣ 📜 Header.js
+┃ ┣ 📜 Hero.js
+┃ ┣ 📜 Program.js
+┃ ┗ 📜 Schedule.js
+┣ 📂 styles/               # Global CSS and Tailwind setup
+┃ ┗ 📜 globals.css
+┣ 📂 public/               # Static assets like images & icons
+┃ ┣ 📂 img/
+┃ ┃ ┣ 📜 image1.jpg
+┃ ┃ ┣ 📜 image2.jpg
+┃ ┃ ┗ 📜 logo.jpg
+┣ 📂 api/                  # **Custom Backend (Server-Side Logic)**
+┃ ┣ 📂 routes/             # **API Route Handlers**
+┃ ┃ ┣ 📜 contact.js        # Example: Contact form API
+┃ ┃ ┗ 📜 auth.js           # Example: Authentication logic
+┃ ┣ 📂 services/           # **Business logic & third-party integrations**
+┃ ┃ ┣ 📜 emailService.js   # Example: Email sender (e.g., Nodemailer)
+┃ ┃ ┗ 📜 dbService.js      # Example: Database queries
+┃ ┣ 📂 middleware/         # **Middleware functions**
+┃ ┃ ┣ 📜 authMiddleware.js # Example: Authentication check
+┃ ┃ ┗ 📜 errorHandler.js   # Example: Global error handling
+┃ ┗ 📜 server.js           # **Custom Express.js server (optional)**
+┣ 📂 pages/                # **Next.js Pages Router (if not using /app)**
+┃ ┣ 📂 api/                # Next.js API routes
+┃ ┃ ┣ 📜 contact.js        # Example API endpoint
+┃ ┃ ┗ 📜 auth.js           # Authentication API
+┃ ┣ 📜 contact.js          # Contact Page
+┃ ┗ 📜 about.js            # About Page
+┣ 📂 database/             # **Database Configuration**
+┃ ┣ 📜 prisma/             # Prisma schema (if using Prisma)
+┃ ┣ 📜 models.js           # Mongoose/Sequelize models
+┃ ┗ 📜 db.js               # Database connection file
+┣ 📂 hooks/                # Custom React hooks
+┃ ┣ 📜 useAuth.js          # Example: Authentication hook
+┃ ┗ 📜 useFetch.js         # Example: Fetch wrapper
+┣ 📂 context/              # React Context API (Global State)
+┃ ┣ 📜 AuthContext.js      # Example: Authentication context
+┃ ┗ 📜 ThemeContext.js     # Example: Theme context
+┣ 📂 utils/                # Utility functions/helpers
+┃ ┣ 📜 validate.js         # Validation functions
+┃ ┣ 📜 constants.js        # Global constants
+┃ ┗ 📜 helpers.js          # Miscellaneous helpers
+┣ 📜 middleware.js         # Middleware for API (e.g., JWT auth)
+┣ 📜 next.config.js        # Next.js Configuration
+┣ 📜 tailwind.config.js    # Tailwind CSS Config
+┣ 📜 tsconfig.json         # TypeScript Config (if using TS)
+┣ 📜 package.json          # Dependencies & Scripts
+┣ 📜 .gitignore            # Git Ignore
+┗ 📜 README.md             # Project Documentation

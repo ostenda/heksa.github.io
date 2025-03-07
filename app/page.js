@@ -4,6 +4,7 @@ import Hero from '@/components/hero'
 import Aboutus from '@/components/aboutus'
 import Program from '@/components/program'
 import Schedule from '@/components/schedule'
+import ContactForm from '@/components/contactform'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <div><Aboutus/></div>
       <div><Program/></div>
       <div><Schedule/></div>
+      <div><ContactForm/></div>
     </div>
   )
 }
