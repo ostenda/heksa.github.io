@@ -8,7 +8,7 @@ export default function Program() {
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
             {/* Junior Academy */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="./img/image2.jpg" className="w-full h-48 object-cover" alt="Junior Academy" />
+              <img src="/img/image2.jpg" className="w-full h-48 object-cover" alt="Junior Academy" />
               <div className="p-6 text-left">
                 <h3 className="text-xl font-bold text-gray-900">Akademia</h3>
                 <p className="text-gray-600 mt-2 text-base">
@@ -22,7 +22,7 @@ export default function Program() {
   
             {/* Adult Training */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <img src="./img/image3.jpg" className="w-full h-48 object-cover" alt="Adult Training" />
+              <img src="/img/image3.jpg" className="w-full h-48 object-cover" alt="Adult Training" />
               <div className="p-6 text-left">
                 <h3 className="text-xl font-bold text-gray-900">Trening dla Dorosłych</h3>
                 <p className="text-gray-600 mt-2 text-base">
