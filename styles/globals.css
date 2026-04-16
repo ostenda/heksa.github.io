@@ -4,7 +4,11 @@
 
 
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  padding: 1rem;
 }

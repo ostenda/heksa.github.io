@@ -1,39 +1,61 @@
+import SectionHeader from '@/components/ui/section-header';
+import SectionWrapper from '@/components/ui/section-wrapper';
+
+const DAYS = ['Poniedziałek', 'Środa', 'Piątek'];
+
+const ROWS = [
+  {
+    time: '09:00–11:00',
+    cells: ['Trening Juniorów', 'Dorośli Początkujący', 'Trening Elity'],
+  },
+  {
+    time: '14:00–16:00',
+    cells: ['Dorośli Zaawansowani', 'Trening Juniorów', 'Wolna Gra'],
+  },
+  {
+    time: '18:00–20:00',
+    cells: ['Trening Elity', 'Dorośli Zaawansowani', 'Przygotowanie Turniejowe'],
+  },
+];
+
 export default function Schedule() {
   return (
-    <div className="bg-white py-20">
-      <div className="max-w-7xl mx-auto text-center px-6">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Plan Treningów
-        </h2>
-        <div className="mt-10 w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="bg-orange-600 text-white text-left font-bold text-base p-4 grid grid-cols-4 text-center">
-            <div className="px-4">Godzina</div>
-            <div className="px-4">Poniedziałek</div>
-            <div className="px-4">Środa</div>
-            <div className="px-4">Piątek</div>
-          </div>
-          <div className="divide-y divide-gray-200">
-            <div className="grid grid-cols-4 p-4">
-              <div className="px-4">09:00 - 11:00</div>
-              <div className="px-4">Trening Juniorów</div>
-              <div className="px-4">Dorośli Początkujący</div>
-              <div className="px-4">Trening Elity</div>
-            </div>
-            <div className="grid grid-cols-4 p-4">
-              <div className="px-4">14:00 - 16:00</div>
-              <div className="px-4">Dorośli Zaawansowani</div>
-              <div className="px-4">Trening Juniorów</div>
-              <div className="px-4">Wolna Gra</div>
-            </div>
-            <div className="grid grid-cols-4 p-4">
-              <div className="px-4">18:00 - 20:00</div>
-              <div className="px-4">Trening Elity</div>
-              <div className="px-4">Dorośli Zaawansowani</div>
-              <div className="px-4">Przygotowanie Turniejowe</div>
-            </div>
-          </div>
+    <section className="bg-gray-50 py-24">
+      <SectionWrapper>
+        <SectionHeader
+          eyebrow="Harmonogram"
+          title="Plan Treningów"
+          description="Treningi odbywają się trzy razy w tygodniu. Wybierz termin pasujący do Twojego grafiku."
+        />
+        <div className="max-w-4xl mx-auto rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-orange-600 text-white">
+                <th className="px-6 py-4 text-left font-semibold tracking-wide w-36">Godzina</th>
+                {DAYS.map((day) => (
+                  <th key={day} className="px-6 py-4 text-left font-semibold tracking-wide">{day}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {ROWS.map(({ time, cells }, i) => (
+                <tr key={time} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50/80'}>
+                  <td className="px-6 py-4 font-bold text-orange-600 whitespace-nowrap" style={{ fontVariantNumeric: 'tabular-nums' }}>
+                    {time}
+                  </td>
+                  {cells.map((cell, j) => (
+                    <td key={DAYS[j]} className="px-6 py-4 text-gray-700">{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </div>
-    </div>
+        <p className="text-center text-gray-400 text-sm mt-6">
+          Masz pytania dotyczące harmonogramu?{' '}
+          <a href="#contact" className="text-orange-600 hover:underline font-medium">Napisz do nas</a>
+        </p>
+      </SectionWrapper>
+    </section>
   );
 }

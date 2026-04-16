@@ -28,6 +28,9 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# claude code — personal local settings only (shared skills and CLAUDE.md should be committed)
+.claude/settings.local.json
+
 # vercel
 .vercel
 

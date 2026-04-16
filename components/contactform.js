@@ -2,6 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import Alert from '@/components/ui/alert';
 
 export default function ContactForm() {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
@@ -23,62 +24,77 @@ export default function ContactForm() {
     }
   }
 
+  const inputClass = (hasError) =>
+    `w-full px-4 py-3 rounded-xl border text-gray-900 text-sm placeholder-gray-400 bg-white outline-none transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-orange-500 ${
+      hasError ? 'border-red-400' : 'border-gray-200 hover:border-gray-300 focus:border-orange-400'
+    }`;
+
   return (
-    <div className="max-w-lg mx-auto p-6 mt-10 bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold mb-4 text-center">Kontakt</h2>
-
-      <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label className="block text-gray-700">Imię i nazwisko</label>
-          <input
-            type="text"
-            placeholder="Podaj imię i nazwisko"
-            className="w-full p-2 border rounded"
-            {...register('name', { required: 'Imię jest wymagane.' })}
-          />
-          {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-        </div>
-
-        <div>
-          <label className="block text-gray-700">Email</label>
-          <input
-            type="email"
-            placeholder="Podaj adres email"
-            className="w-full p-2 border rounded"
-            {...register('email', {
-              required: 'Email jest wymagany.',
-              pattern: { value: /^\S+@\S+\.\S+$/, message: 'Nieprawidłowy adres email.' },
-            })}
-          />
-          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-        </div>
-
-        <div>
-          <label className="block text-gray-700">Wiadomość</label>
-          <textarea
-            placeholder="Napisz wiadomość"
-            className="w-full p-2 border rounded"
-            rows="4"
-            {...register('message', { required: 'Wiadomość jest wymagana.' })}
-          />
-          {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
-        </div>
-
-        {status === 'success' && (
-          <p className="text-green-600 text-sm">Wiadomość została wysłana. Dziękujemy!</p>
+    <form className="space-y-5" onSubmit={handleSubmit(onSubmit)} noValidate>
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
+          Imię i nazwisko
+        </label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Jan Kowalski"
+          autoComplete="name"
+          className={inputClass(!!errors.name)}
+          {...register('name', { required: 'Imię jest wymagane.' })}
+        />
+        {errors.name && (
+          <p className="text-red-500 text-xs mt-1.5" role="alert">{errors.name.message}</p>
         )}
-        {status === 'error' && (
-          <p className="text-red-500 text-sm">Wystąpił błąd. Spróbuj ponownie.</p>
-        )}
+      </div>
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="w-full bg-orange-600 text-white py-2 rounded hover:bg-orange-700 disabled:opacity-50"
-        >
-          {isSubmitting ? 'Wysyłanie...' : 'Wyślij wiadomość'}
-        </button>
-      </form>
-    </div>
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+          Adres email
+        </label>
+        <input
+          id="email"
+          type="email"
+          placeholder="jan@example.com"
+          autoComplete="email"
+          spellCheck={false}
+          className={inputClass(!!errors.email)}
+          {...register('email', {
+            required: 'Email jest wymagany.',
+            pattern: { value: /^\S+@\S+\.\S+$/, message: 'Nieprawidłowy adres email.' },
+          })}
+        />
+        {errors.email && (
+          <p className="text-red-500 text-xs mt-1.5" role="alert">{errors.email.message}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+          Wiadomość
+        </label>
+        <textarea
+          id="message"
+          placeholder="Napisz wiadomość…"
+          rows={5}
+          className={inputClass(!!errors.message)}
+          {...register('message', { required: 'Wiadomość jest wymagana.' })}
+        />
+        {errors.message && (
+          <p className="text-red-500 text-xs mt-1.5" role="alert">{errors.message.message}</p>
+        )}
+      </div>
+
+      {status === 'success' && <Alert variant="success">Wiadomość wysłana. Dziękujemy!</Alert>}
+      {status === 'error' && <Alert variant="error">Wystąpił błąd. Spróbuj ponownie.</Alert>}
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-orange-600 text-white font-semibold py-3 rounded-xl hover:bg-orange-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+      >
+        {isSubmitting ? 'Wysyłanie\u2026' : 'Wyślij wiadomość'}
+      </button>
+    </form>
   );
 }
